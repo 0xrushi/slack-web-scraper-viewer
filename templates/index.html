@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Conversation</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-9L5wp2Un5QGyAkYRYOeuJxynzRcbZkJnmBZD+Av58vS8bOKRkU6hYU6Lq3vTY8ROllWPhlLe1mkgG+fQsB1XQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+      /* Add your custom CSS here */
+    </style>
+  </head>
+  <body>
+    <h1>Conversation</h1>
+    {% for entry in conversation %}
+      <div class="entry">
+        <h2>{{ entry.date }}</h2>
+        {% for post in entry.posts %}
+          <div class="post container">
+            <div class="row">
+            <div class="col1">
+                <p class="sender">{{ post.sender }}</p>
+                <div class="text">{{ post.text | safe}}</div>
+                <p class="time">{{ post.time }}</p>
+                {% if post.reactions %}
+                <div class="reactions">
+                    {% for reaction in post.reactions %}
+                    <img src="{{ reaction.emojiAsImage }}" alt="{{ reaction.emojiAsText }}" title="{{ reaction.emojiAsText }}" class="reaction-img" />
+                    <span class="reaction-count">{{ reaction.count }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div class="col">
+                {% if post.replies %}
+                <div class="replies">
+                    {% for reply in post.replies %}
+                    <div class="reply container">
+                        <div class="row">
+                            <p class="sender">{{ reply.sender }}</p>
+                            <div class="text">{{ reply.text | safe}}</div>
+                            <p class="time">{{ reply.time }}</p>
+                            {% if reply.reactions %}
+                            <div class="reactions">
+                                {% for reaction in reply.reactions %}
+                                <img src="{{ reaction.emojiAsImage }}" alt="{{ reaction.emojiAsText }}" title="{{ reaction.emojiAsText }}" class="reaction-img" />
+                                <span class="reaction-count">{{ reaction.count }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </body>
+</html>

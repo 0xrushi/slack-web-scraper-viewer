@@ -1,0 +1,107 @@
+/* Main container */
+.entry {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px;
+  }
+  
+  /* Post container */
+  .post {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  /* Sender name */
+  .sender {
+    color: #4a4a4a;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  /* Post text */
+  .text {
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  /* Timestamp */
+  .time {
+    font-size: 12px;
+    color: #919191;
+  }
+  
+  /* Replies */
+  .replies {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  
+  /* Reply container */
+  .reply {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  /* Reply sender name */
+  .reply .sender {
+    color: #4a4a4a;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  /* Reply text */
+  .reply .text {
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  /* Apply Bootstrap classes */
+  .entry {
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .post {
+    margin: 10px;
+  }
+  
+  .sender {
+    font-size: 1.2em;
+  }
+  
+  .text {
+    font-size: 1.2em;
+    color: #333;
+    background-color: #f8f9fa;
+
+  }
+  
+  .time {
+    font-size: 0.8em;
+    color: #aaa;
+    margin-top: 5px;
+  }
+  
+  .replies {
+    margin-top: 10px;
+  }
+  
+  .reply {
+    margin: 10px;
+    background-color: #efefef;
+  }
+  
+  .reply .text {
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  img {
+    width: 16px;
+    height: 16px;
+  }
